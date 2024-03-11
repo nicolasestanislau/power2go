@@ -50,7 +50,6 @@ const Header = ({ setQuery, onFilterChange }) => {
           name="input"
           className="country__input"
           placeholder="Procure um país..."
-          onInput={(e) => setQuery(e.currentTarget.value)}
           onChange={(e) => {
             setValue(e.target.value);
           }}

@@ -17,6 +17,8 @@ function App() {
 
   const handleFilterChange = (newView) => {
     // Callback function for view mode changes
+    console.log(`Searching for: ${query}`);
+
     setExhibition(newView);
   };
   // Fetching countries data
@@ -43,6 +45,7 @@ function App() {
     if (query.length <= 0) {
       return;
     }
+    setFilter(true)
     let filterData = countryData.filter((data) =>
       data.name.toLowerCase().includes(query.toLowerCase())
     );
@@ -81,7 +84,7 @@ function App() {
         )
       ) : (
         <>
-          <Header setQuery={setQuery} onFilterChange={handleFilterChange} />
+          <Header setQuery={setQuery}  onFilterChange={handleFilterChange} />
           {
             <Countries
               key={query}
