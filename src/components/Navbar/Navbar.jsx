@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -31,7 +31,10 @@ const Navbar = () => {
   return (
     <div className="Navbar">
       <h1 className="title">Em que país?</h1>
-      <button className="back__btn button__model" onClick={(e) => setData({})}>
+      <button className="back__btn button__model" style={{ cursor: "pointer"}} onClick={() => {
+        const history = localStorage.getItem("historico");
+        console.log(history);
+      }}>
         <FontAwesomeIcon icon={faArrowLeftLong} />
         Histórico
       </button>

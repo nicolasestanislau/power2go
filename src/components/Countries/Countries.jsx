@@ -13,15 +13,16 @@ const Countries = ({
 }) => {
   console.log(filterData, "Countries");
   console.log(countryData, "countryData");
+  console.log(filter, "filter");
   return (
     <div className="Countries">
       {/* Checking Condition to show and hide components */}
-      {/* {loading ? (
+      {loading ? (
         <h1 className="loading">Loading...</h1>
       ) : error ? (
         <h1 className="loading">Error</h1> // Render error message when error is true
-      ) : filter.length > 0 ? (
-        exhibition ? (
+      ) : filter ? (
+        filterData.length > 0 ? (
           filterData?.map((data, index) => (
             <Country
               cardData={data}
@@ -33,16 +34,16 @@ const Countries = ({
         ) : (
           <h1 className="result__msg">Países não encontrados.</h1>
         )
-      ) : ( */}
-      {countryData?.map((data, index) => (
+      ) : (
+      countryData?.map((data, index) => (
         <Country
           cardData={data}
           key={index}
           setData={setData}
           setExhibition={exhibition}
         />
-      ))}
-      {/* )} */}
+      ))
+    )} 
     </div>
   );
 };
