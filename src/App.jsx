@@ -53,8 +53,6 @@ function App() {
     console.log(filterData, "heloloolo ");
   }, [query]);
 
-  console.log("query ", query);
-
   // Filtering data when user choose region or change
   useEffect(() => {
     if (exhibition) {
@@ -62,6 +60,7 @@ function App() {
     } else {
       setExhibition(false);
     }
+    console.log('cala a boca sandro')
     setQuery("");
   }, [exhibition]);
 
@@ -77,14 +76,14 @@ function App() {
   return (
     <>
       {/* Showing Components based on conditions */}
-      <Navbar />
+      <Navbar setQuery={setQuery} />
       {isDetailPage ? (
         Object.keys(data)?.length > 0 && (
           <CountryDetails countryData={data} setData={setData} />
         )
       ) : (
         <>
-          <Header setQuery={setQuery}  onFilterChange={handleFilterChange} />
+          <Header setQuery={setQuery} onFilterChange={handleFilterChange} />
           {
             <Countries
               key={query}

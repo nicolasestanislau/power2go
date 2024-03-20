@@ -10,7 +10,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 const Country = ({ cardData, setData, setExhibition }) => {
-  //console.log("cardData: ", cardData);
   return (
     <>
       {setExhibition ? (
